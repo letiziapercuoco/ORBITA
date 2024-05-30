@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+
+            html, body {
+                width: 100vw;
+                height: 100vh;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+            }
+
+            .controls {
+                z-index: 100;
+                position: absolute;
+                inset: 0;
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden;
+                pointer-events: none;
+            }
+
+            .ui-sinistra {
+                position: absolute;
+                left: 0;
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                padding: 2vh;
+                gap: 20px;
+            }
+
+            .ui-sinistra > img {
+                max-width: 25vw;
+                object-fit: contain;
+                object-position: left;
+            }
+
+            .ui-destra {
+                position: absolute;
+                right: 0;
+                top: 0;
+                display: flex;
+                flex-direction: column;
+                height: 100vh;
+                padding: 2vh;
+                gap: 20px;
+            }
+
+            
+            .ui-destra > img {
+                max-width: 25vw;
+                object-fit: contain;
+                object-position: right;
+            }
+
+            .spazio {
+                flex-grow: 1;
+            }
+
+            .controlli-destra {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+            }
+
+            .orologio {
+                position: absolute;
+                width: 50vw;
+                text-align: center;
+                left: 25vw;
+                right: 25vw;
+                top: 5vh;
+                color: #ebff00;
+                font-family: monospace;
+                font-size: 12pt;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="controls" id="controls-container">
+            <div class="ui-sinistra">
+                <img src="ALTOSX.png" style="max-height: 45vh;" />
+                <div class="spazio"></div>
+                <img src="SX.png" style="max-height: 18vh;" />
+                <img src="BASSOSX.png" style="max-height: 20vh;"/>
+            </div>
+
+            <div class="ui-destra">
+                <img src="ALTODX.png" style="max-height: 8vh;" />
+                <img src="DX.png" style="max-height: 15vh;" />
+                <img src="DX2.png" style="max-height: 45vh; width: auto;"/>
+                <img src="DX3.png" style="max-height: 1.5vh;" />
+                <div class="spazio"></div>
+                <img src="PULSANTE1.png" id="btnSatelliti" style="max-height: 3vh; cursor: pointer; pointer-events: all;" />
+                <img src="PULSANTE2.png" id="btnPianeti" style="max-height: 3vh; cursor: pointer; pointer-events: all;" />
+                <div class="controlli-destra">
+                    <img src="PULSANTE6.png" style="max-height: 3vh; cursor: pointer; pointer-events: all;" />
+                    <img src="PULSANTE5.png" style="max-height: 3vh; cursor: pointer; pointer-events: all;" />
+                    <img src="PULSANTE4.png" style="max-height: 3vh; cursor: pointer; pointer-events: all;" />
+                    <img src="PULSANTE3.png" id="btnStelle" style="max-height: 3vh; cursor: pointer; pointer-events: all;" />
+                </div>
+            </div>
+
+            <div class="orologio" id="orologio"></div>
+        </div>
+
+        <script src="./main.js"></script>
+    </body>
+</html>
